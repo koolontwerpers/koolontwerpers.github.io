@@ -1,0 +1,111 @@
+// main stylesheet for Kool Ontwerpers
+
+// fontface
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;800&display=swap');
+
+// css resets
+@import "normalize.scss";
+@import "box-sizing.scss";
+
+// variables
+$site-width: 1280px;
+$site-padding: 32px;
+
+// root vars
+:root {
+  --primary: rgb(39,37,37);
+  --background: white;
+  @media screen and ( prefers-color-scheme: dark ) {
+    --primary: rgb(225,225,225);
+    --background: rgb(39,37,37);
+  }
+}
+
+// typography
+* {
+  font-family: 'Mukta', sans-serif;
+  font-weight: 300;
+  line-height: 1.25;
+  color: var(--primary);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+}
+h2 {
+  font-size: 48px;    
+}
+strong, b {
+  font-weight: 600;
+}
+em, i {
+  font-style: italic;
+}
+
+// site
+html {
+  background-color: var(--background);
+}
+
+body {
+  height: 100%;
+  min-height: 100vh !important;
+  width: 100%;
+  width: 100vw;
+  max-width: $site-width;
+  margin: 0 auto;
+}
+
+.site {
+  height: 100%;
+  min-height: 100vh !important;
+  @media screen and (min-width: $site-width) {
+    border-left: 1px solid var(--primary);
+    border-right: 1px solid var(--primary);
+  }
+  & header.site-header {
+    padding: $site-padding;
+    & .logo {
+      width: 170px;
+      height: 45px;
+      background-image: url('data:image/svg+xml,<svg width="1080px" height="292px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><path d="M902.671,0l0,291.945l177.329,-0l0,-72.912l-104.263,-0l0,-219.033l-73.066,0Z" style="fill:rgb(39,37,37);fill-rule:nonzero;"/><path d="M814.158,42.978c-26.252,-28.647 -57.845,-42.976 -94.74,-42.976c-36.869,0 -68.355,14.327 -94.394,42.976c-26.072,28.648 -39.088,63.087 -39.088,103.329c-0,39.798 13.12,74.016 39.37,102.676c26.268,28.643 57.643,42.974 94.11,42.974c36.895,0 68.488,-14.222 94.74,-42.655c26.252,-28.429 39.372,-62.764 39.372,-102.993c0.004,-40.246 -13.118,-74.683 -39.37,-103.331m-47.157,154.762c-13.258,14.204 -29.102,21.293 -47.583,21.293c-18.037,-0 -33.695,-7.199 -46.934,-21.628c-13.248,-14.409 -19.872,-31.446 -19.872,-51.096c-0,-20.096 6.522,-37.35 19.567,-51.769c13.041,-14.421 28.783,-21.622 47.237,-21.622c18.481,0 34.325,7.201 47.583,21.622c13.235,14.419 19.868,31.673 19.868,51.769c0.002,20.086 -6.629,37.229 -19.866,51.431" style="fill:rgb(39,37,37);fill-rule:nonzero;"/><path d="M508.795,42.978c-26.26,-28.647 -57.831,-42.976 -94.722,-42.976c-36.886,0 -68.355,14.327 -94.425,42.976c-26.055,28.648 -39.096,63.087 -39.096,103.329c-0,39.798 13.149,74.016 39.409,102.676c26.252,28.643 57.618,42.974 94.112,42.974c36.893,0 68.462,-14.222 94.722,-42.655c26.243,-28.429 39.39,-62.764 39.39,-102.993c0,-40.246 -13.147,-74.683 -39.39,-103.331m-47.143,154.762c-13.256,14.204 -29.122,21.293 -47.579,21.293c-18.054,-0 -33.72,-7.199 -46.951,-21.628c-13.255,-14.409 -19.87,-31.446 -19.87,-51.096c0,-20.096 6.519,-37.35 19.56,-51.769c13.045,-14.421 28.799,-21.622 47.261,-21.622c18.455,0 34.323,7.201 47.579,21.622c13.231,14.419 19.847,31.673 19.847,51.769c0,20.086 -6.618,37.229 -19.847,51.431" style="fill:rgb(39,37,37);fill-rule:nonzero;"/><path d="M251.453,52.949l-51.625,-52.943l-93.9,95.262l-0.027,-0.008l-32.89,32.932l-0,-128.186l-73.011,0l0.027,291.994l73,0l-0.016,-126.233l32.866,32.928l0.032,-0.031l93.919,93.336l51.625,-51.006l-93.902,-94.031l93.902,-94.014Z" style="fill:rgb(39,37,37);fill-rule:nonzero;"/></svg>');
+      @media screen and ( prefers-color-scheme: dark ) {
+        background-image: url('data:image/svg+xml,<svg width="1080px" height="292px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><path d="M902.671,0l0,291.945l177.329,-0l0,-72.912l-104.263,-0l0,-219.033l-73.066,0Z" style="fill:rgb(225,225,225);fill-rule:nonzero;"/><path d="M814.158,42.978c-26.252,-28.647 -57.845,-42.976 -94.74,-42.976c-36.869,0 -68.355,14.327 -94.394,42.976c-26.072,28.648 -39.088,63.087 -39.088,103.329c-0,39.798 13.12,74.016 39.37,102.676c26.268,28.643 57.643,42.974 94.11,42.974c36.895,0 68.488,-14.222 94.74,-42.655c26.252,-28.429 39.372,-62.764 39.372,-102.993c0.004,-40.246 -13.118,-74.683 -39.37,-103.331m-47.157,154.762c-13.258,14.204 -29.102,21.293 -47.583,21.293c-18.037,-0 -33.695,-7.199 -46.934,-21.628c-13.248,-14.409 -19.872,-31.446 -19.872,-51.096c-0,-20.096 6.522,-37.35 19.567,-51.769c13.041,-14.421 28.783,-21.622 47.237,-21.622c18.481,0 34.325,7.201 47.583,21.622c13.235,14.419 19.868,31.673 19.868,51.769c0.002,20.086 -6.629,37.229 -19.866,51.431" style="fill:rgb(225,225,225);fill-rule:nonzero;"/><path d="M508.795,42.978c-26.26,-28.647 -57.831,-42.976 -94.722,-42.976c-36.886,0 -68.355,14.327 -94.425,42.976c-26.055,28.648 -39.096,63.087 -39.096,103.329c-0,39.798 13.149,74.016 39.409,102.676c26.252,28.643 57.618,42.974 94.112,42.974c36.893,0 68.462,-14.222 94.722,-42.655c26.243,-28.429 39.39,-62.764 39.39,-102.993c0,-40.246 -13.147,-74.683 -39.39,-103.331m-47.143,154.762c-13.256,14.204 -29.122,21.293 -47.579,21.293c-18.054,-0 -33.72,-7.199 -46.951,-21.628c-13.255,-14.409 -19.87,-31.446 -19.87,-51.096c0,-20.096 6.519,-37.35 19.56,-51.769c13.045,-14.421 28.799,-21.622 47.261,-21.622c18.455,0 34.323,7.201 47.579,21.622c13.231,14.419 19.847,31.673 19.847,51.769c0,20.086 -6.618,37.229 -19.847,51.431" style="fill:rgb(225,225,225);fill-rule:nonzero;"/><path d="M251.453,52.949l-51.625,-52.943l-93.9,95.262l-0.027,-0.008l-32.89,32.932l-0,-128.186l-73.011,0l0.027,291.994l73,0l-0.016,-126.233l32.866,32.928l0.032,-0.031l93.919,93.336l51.625,-51.006l-93.902,-94.031l93.902,-94.014Z" style="fill:rgb(225,225,225);fill-rule:nonzero;"/></svg>');
+      }
+      background-size: contain;
+      background-repeat: no-repeat;
+      color: transparent !important;
+      font-size: 0 !important;
+      & * {
+        color: transparent !important;
+        font-size: 0 !important;
+      }
+    }
+  }
+
+  & main.site-main {
+    padding: $site-padding;
+    padding-top: 0;
+    & .intro {
+      display: flex;
+      flex-direction: column;
+      font-size: 22px;
+      @media screen and (min-width: 768px) {
+        font-size: 28px;
+      }
+    }
+    & #members {
+
+    }
+  }
+
+  & footer.site-footer {
+    position: sticky;
+    top: 100vh;
+    width: 100%;
+    border-top: 1px solid var(--primary);
+    padding: $site-padding;
+    & address {
+      font-style: normal;
+    }
+  }
+}
