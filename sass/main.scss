@@ -14,7 +14,7 @@ $site-padding: 32px;
 // root vars
 :root {
   --primary: rgb(39,37,37);
-  --background: white;
+  --background: rgb(255,255,255);
   @media screen and ( prefers-color-scheme: dark ) {
     --primary: rgb(225,225,225);
     --background: rgb(39,37,37);
@@ -41,9 +41,52 @@ em, i {
   font-style: italic;
 }
 
+// css animations
+@keyframes fadeInBody {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0; 
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes morphColor {
+  0% {
+    background: var(--background);
+  }
+  16.66% {
+    background: rgb(220,255,255); 
+  }
+  33.33% {
+    background: var(--background);
+  }
+  50% {
+    background: rgb(255,255,225); 
+  }
+  66.66% {
+    background: var(--background);
+  }
+  83.33% {
+    background: rgb(255,230,255);
+  }
+  100% {
+    background: var(--background);
+  }
+}
+
 // site
 html {
   background-color: var(--background);
+  @media screen and ( prefers-color-scheme: light ) {
+    animation: morphColor 60s linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-delay: 10s;
+  }
 }
 
 body {
@@ -53,6 +96,9 @@ body {
   width: 100vw;
   max-width: $site-width;
   margin: 0 auto;
+  animation: fadeInBody 1.5s ease;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .site {
